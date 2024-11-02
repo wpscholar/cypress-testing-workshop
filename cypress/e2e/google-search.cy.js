@@ -3,5 +3,6 @@ describe('Perform Google Search', () => {
         cy.visit('https://www.google.com')
         cy.get('[name="q"]').type('wpscholar{enter}')
         cy.contains('wpscholar.com').click()
+        cy.url().should('include', 'wpscholar.com')
     })
 })
