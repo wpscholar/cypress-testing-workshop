@@ -40,6 +40,22 @@ Resources:
 * [View step-by-step changes](https://github.com/wpscholar/cypress-testing-workshop/compare/de1bece4a4f0c2e3109cbe93afb26410cbcaf578...2606f37fb67300f2020468ca06e43cec9b617214)
 * [View Cypress walk-through](https://docs.cypress.io/app/end-to-end-testing/writing-your-first-end-to-end-test)
 
+## Google Search Challenge
+
+Goals:
+
+* Visit [google.com](https://www.google.com)
+* Type `wpscholar` in the search box
+* Submit search
+* Validate that a result containing `wpscholar.com` exists
+* Click the result
+* Validate that the URL is [wpscholar.com](https://wpscholar.com)
+
+Resources:
+
+* [View step-by-step changes](https://github.com/wpscholar/cypress-testing-workshop/compare/5230e1c587ff7d0a7520214416fdcb5c7c6cf925...37d14efc7c9d56b184b46aadb3465e0a88f65544)
+
+
 ## Resources
 
 * [Todo App](https://todomvc-app-for-testing.surge.sh/) - This is what we'll be testing
