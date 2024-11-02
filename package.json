@@ -4,5 +4,8 @@
   "description": "A Todo App",
   "main": "index.js",
   "author": "Micah Wood",
-  "license": "GPL-2.0-or-later"
+  "license": "GPL-2.0-or-later",
+  "devDependencies": {
+    "cypress": "^13.15.1"
+  }
 }
