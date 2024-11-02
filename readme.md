@@ -23,3 +23,7 @@
 * Run `npm init`
 * Run `npm install cypress --save-dev`
 * Run `npx cypress open`
+
+## Resources
+
+* [Todo App](https://todomvc-app-for-testing.surge.sh/) - This is what we'll be testing
