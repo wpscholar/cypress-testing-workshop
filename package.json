@@ -1,0 +1,8 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "description": "A Todo App",
+  "main": "index.js",
+  "author": "Micah Wood",
+  "license": "GPL-2.0-or-later"
+}
