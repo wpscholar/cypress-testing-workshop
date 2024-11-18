@@ -19,10 +19,10 @@ describe('TODO MVC', () => {
     })
 
     it('Edit a task', () => {
-        cy.get('.new-todo').type('Learn Cypress').type('{enter}')
-        cy.get('.todo-list li').first().contains('Learn Cypress').dblclick()
-        cy.get('.todo-list li').first().find('input').clear().type('Teach Cypress').type('{enter}')
-        cy.get('.todo-list li').first().should('contain', 'Teach Cypress')
+        cy.get('[data-testid="text-input"]').type('Learn Cypress').type('{enter}')
+        cy.get('[data-testid="todo-list"]').first().contains('Learn Cypress').dblclick()
+        cy.get('[data-testid="todo-list"]').first().find('input').clear().type('Teach Cypress').type('{enter}')
+        cy.get('[data-testid="todo-list"]').first().should('contain', 'Teach Cypress')
     })
 
     it('Delete a task', () => {
