@@ -3,7 +3,7 @@
 describe('TODO MVC', () => {
 
     beforeEach(() => {
-        cy.visit('https://todomvc.com/examples/react/dist/')
+        cy.visit('/')
     })
 
     it('Add a new task', () => {
