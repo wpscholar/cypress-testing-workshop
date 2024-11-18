@@ -58,5 +58,5 @@ Resources:
 
 ## Resources
 
-* [Todo App](https://todomvc-app-for-testing.surge.sh/) - This is what we'll be testing
+* [Todo App](https://todomvc.com/examples/react/dist/) - This is what we'll be testing
 * [Slides](https://bit.ly/wpscholar-cypress-testing-workshop)
