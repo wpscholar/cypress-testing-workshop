@@ -28,7 +28,7 @@ describe('TODO MVC', () => {
     it('Delete a task', () => {
         cy.get('[data-testid="text-input"]').type('Learn Cypress').type('{enter}')
         cy.get('[data-testid="todo-list"]').first().find('.destroy').click({ force: true })
-        cy.get('[data-testid="todo-list"]').should('be.empty')  
+        cy.get('[data-testid="todo-list"]').should('be.empty')
     })
 
     it('Filter tasks', () => {
