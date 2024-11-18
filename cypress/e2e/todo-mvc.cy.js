@@ -13,7 +13,9 @@ describe('TODO MVC', () => {
     })
 
     it('Mark a task complete', () => {
-
+        cy.get('.new-todo').type('Learn Cypress').type('{enter}')
+        cy.get('.todo-list li').first().find('.toggle').click()
+        cy.get('.todo-list li').first().should('have.class', 'completed')
     })
 
     it('Edit a task', () => {
