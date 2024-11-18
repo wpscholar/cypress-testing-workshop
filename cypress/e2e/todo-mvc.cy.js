@@ -32,7 +32,17 @@ describe('TODO MVC', () => {
     })
 
     it('Filter tasks', () => {
-
+        cy.get('.new-todo').type('Learn Cypress').type('{enter}')
+        cy.get('.new-todo').type('Teach Cypress').type('{enter}')
+        cy.get('.todo-list li').first().find('.toggle').click()
+        cy.get('.todo-list li').should('have.length', 2)
+        cy.get('.todo-list li').first().should('have.class', 'completed')
+        cy.get('[href="#/completed"]').click()
+        cy.get('.todo-list li').should('have.length', 1)
+        cy.get('.todo-list li').should('contain', 'Learn Cypress').should('have.class', 'completed')
+        cy.get('[href="#/active"]').click()
+        cy.get('.todo-list li').should('have.length', 1)
+        cy.get('.todo-list li').should('contain', 'Teach Cypress').should('not.have.class', 'completed')
     })
 
     it('Clear completed tasks', () => {
