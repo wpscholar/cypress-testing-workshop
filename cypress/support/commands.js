@@ -27,3 +27,7 @@
 Cypress.Commands.add('addTask', (task) => {
     cy.get('[data-testid="text-input"]').type(task).type('{enter}')
 })
+
+Cypress.Commands.add('markTaskComplete', (task) => {
+    cy.contains(task).parent().find('[data-testid="todo-item-toggle"]').click()
+})

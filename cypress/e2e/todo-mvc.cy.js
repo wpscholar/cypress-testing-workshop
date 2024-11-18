@@ -14,7 +14,7 @@ describe('TODO MVC', () => {
 
     it('Mark a task complete', () => {
         cy.addTask('Learn Cypress');
-        cy.get('[data-testid="todo-list"]').first().find('[data-testid="todo-item-toggle"]').click()
+        cy.markTaskComplete('Learn Cypress');
         cy.get('[data-testid="todo-item"]').should('have.class', 'completed')
     })
 
