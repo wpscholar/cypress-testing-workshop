@@ -23,3 +23,7 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('addTask', (task) => {
+    cy.get('[data-testid="text-input"]').type(task).type('{enter}')
+})

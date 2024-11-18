@@ -7,32 +7,32 @@ describe('TODO MVC', () => {
     })
 
     it('Add a new task', () => {
-        cy.get('[data-testid="text-input"]').type('Learn Cypress').type('{enter}')
+        cy.addTask('Learn Cypress');
         cy.get('[data-testid="todo-list"]').should('have.length', 1)
         cy.get('[data-testid="todo-list"]').should('contain', 'Learn Cypress')
     })
 
     it('Mark a task complete', () => {
-        cy.get('[data-testid="text-input"]').type('Learn Cypress').type('{enter}')
+        cy.addTask('Learn Cypress');
         cy.get('[data-testid="todo-list"]').first().find('[data-testid="todo-item-toggle"]').click()
         cy.get('[data-testid="todo-item"]').should('have.class', 'completed')
     })
 
     it('Edit a task', () => {
-        cy.get('[data-testid="text-input"]').type('Learn Cypress').type('{enter}')
+        cy.addTask('Learn Cypress');
         cy.get('[data-testid="todo-list"]').contains('Learn Cypress').dblclick()
         cy.get('[data-testid="todo-list"]').first().find('input').clear().type('Teach Cypress').type('{enter}')
         cy.get('[data-testid="todo-list"]').first().should('contain', 'Teach Cypress')
     })
 
     it('Delete a task', () => {
-        cy.get('[data-testid="text-input"]').type('Learn Cypress').type('{enter}')
+        cy.addTask('Learn Cypress');
         cy.get('[data-testid="todo-list"]').first().find('.destroy').click({ force: true })
         cy.get('[data-testid="todo-list"]').should('be.empty')
     })
 
     it('Filter tasks', () => {
-        cy.get('[data-testid="text-input"]').type('Learn Cypress').type('{enter}')
+        cy.addTask('Learn Cypress');
         cy.get('[data-testid="text-input"]').type('Teach Cypress').type('{enter}')
         cy.get('[data-testid="todo-item-toggle"]').first().click()
         cy.get('[data-testid="todo-item"]').should('have.length', 2)
@@ -46,7 +46,7 @@ describe('TODO MVC', () => {
     })
 
     it('Clear completed tasks', () => {
-        cy.get('[data-testid="text-input"]').type('Learn Cypress').type('{enter}')
+        cy.addTask('Learn Cypress');
         cy.get('[data-testid="text-input"]').type('Teach Cypress').type('{enter}')
         cy.get('[data-testid="todo-item"]').should('have.length', 2)
         cy.get('[data-testid="todo-item-toggle"]').first().click()
@@ -55,7 +55,7 @@ describe('TODO MVC', () => {
     })
 
     it('Mark all tasks complete', () => {
-        cy.get('[data-testid="text-input"]').type('Learn Cypress').type('{enter}')
+        cy.addTask('Learn Cypress');
         cy.get('[data-testid="text-input"]').type('Teach Cypress').type('{enter}')
         cy.get('[data-testid="todo-item"].completed').should('have.length', 0)
         cy.get('[data-testid="toggle-all"]').click()
@@ -63,7 +63,7 @@ describe('TODO MVC', () => {
     })
 
     it('Mark all tasks active', () => {
-        cy.get('[data-testid="text-input"]').type('Learn Cypress').type('{enter}')
+        cy.addTask('Learn Cypress');
         cy.get('[data-testid="text-input"]').type('Teach Cypress').type('{enter}')
         cy.get('[data-testid="todo-item"].completed').should('have.length', 0)
         cy.get('[data-testid="toggle-all"]').click()
