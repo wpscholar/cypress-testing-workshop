@@ -6,10 +6,10 @@ describe('TODO MVC', () => {
         cy.visit('/')
     })
 
-    it('Add a new task', () => {
-        cy.get('.new-todo').type('Learn Cypress').type('{enter}')
-        cy.get('.todo-list li').should('have.length', 1)
-        cy.get('.todo-list li').should('contain', 'Learn Cypress')
+    it.only('Add a new task', () => {
+        cy.get('[data-testid="text-input"]').type('Learn Cypress').type('{enter}')
+        cy.get('[data-testid="todo-list"]').should('have.length', 1)
+        cy.get('[data-testid="todo-list"]').should('contain', 'Learn Cypress')
     })
 
     it('Mark a task complete', () => {
