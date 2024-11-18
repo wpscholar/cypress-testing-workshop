@@ -7,7 +7,9 @@ describe('TODO MVC', () => {
     })
 
     it('Add a new task', () => {
-
+        cy.get('.new-todo').type('Learn Cypress').type('{enter}')
+        cy.get('.todo-list li').should('have.length', 1)
+        cy.get('.todo-list li').should('contain', 'Learn Cypress')
     })
 
     it('Mark a task complete', () => {
