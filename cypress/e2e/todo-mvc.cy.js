@@ -2,6 +2,10 @@
 
 describe('TODO MVC', () => {
 
+    beforeEach(() => {
+        cy.visit('https://todomvc.com/examples/react/dist/')
+    })
+
     it('Add a new task', () => {
 
     })
