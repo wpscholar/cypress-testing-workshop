@@ -13,9 +13,9 @@ describe('TODO MVC', () => {
     })
 
     it('Mark a task complete', () => {
-        cy.get('.new-todo').type('Learn Cypress').type('{enter}')
-        cy.get('.todo-list li').first().find('.toggle').click()
-        cy.get('.todo-list li').first().should('have.class', 'completed')
+        cy.get('[data-testid="text-input"]').type('Learn Cypress').type('{enter}')
+        cy.get('[data-testid="todo-list"]').first().find('[data-testid="todo-item-toggle"]').click()
+        cy.get('[data-testid="todo-item"]').should('have.class', 'completed')
     })
 
     it('Edit a task', () => {
