@@ -6,7 +6,7 @@ describe('TODO MVC', () => {
         cy.visit('/')
     })
 
-    it.only('Add a new task', () => {
+    it('Add a new task', () => {
         cy.get('[data-testid="text-input"]').type('Learn Cypress').type('{enter}')
         cy.get('[data-testid="todo-list"]').should('have.length', 1)
         cy.get('[data-testid="todo-list"]').should('contain', 'Learn Cypress')
