@@ -55,7 +55,11 @@ describe('TODO MVC', () => {
     })
 
     it('Mark all tasks complete', () => {
-
+        cy.get('.new-todo').type('Learn Cypress').type('{enter}')
+        cy.get('.new-todo').type('Teach Cypress').type('{enter}')
+        cy.get('.todo-list li.completed').should('have.length', 0)
+        cy.get('.toggle-all').click()
+        cy.get('.todo-list li.completed').should('have.length', 2)
     })
 
     it('Mark all tasks active', () => {
