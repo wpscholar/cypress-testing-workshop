@@ -46,12 +46,12 @@ describe('TODO MVC', () => {
     })
 
     it('Clear completed tasks', () => {
-        cy.get('.new-todo').type('Learn Cypress').type('{enter}')
-        cy.get('.new-todo').type('Teach Cypress').type('{enter}')
-        cy.get('.todo-list li').should('have.length', 2)
-        cy.get('.todo-list li').first().find('.toggle').click()
+        cy.get('[data-testid="text-input"]').type('Learn Cypress').type('{enter}')
+        cy.get('[data-testid="text-input"]').type('Teach Cypress').type('{enter}')
+        cy.get('[data-testid="todo-item"]').should('have.length', 2)
+        cy.get('[data-testid="todo-item-toggle"]').first().click()
         cy.get('.clear-completed').click()
-        cy.get('.todo-list li').should('have.length', 1)
+        cy.get('[data-testid="todo-list"]').should('have.length', 1)
     })
 
     it('Mark all tasks complete', () => {
